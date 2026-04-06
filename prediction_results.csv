@@ -1,0 +1,9 @@
+Video,Prediction,Fake_Probability,Full_Path
+01_02__outside_talking_still_laughing__YVGY8LOK.mp4,FAKE,0.7874760031700134,./videos_to_predict\01_02__outside_talking_still_laughing__YVGY8LOK.mp4
+fake.mp4,FAKE,0.8036868572235107,./videos_to_predict\fake.mp4
+fake_trump.mp4,FAKE,0.8439633846282959,./videos_to_predict\fake_trump.mp4
+id0_id3_0000.mp4,REAL,0.07516908645629883,./videos_to_predict\id0_id3_0000.mp4
+real.mp4,REAL,0.2655446231365204,./videos_to_predict\real.mp4
+vs35.mp4,FAKE,0.7892411947250366,./videos_to_predict\vs35.mp4
+WhatsApp Video 2025-05-02 at 14.05.45_49b3d8d6.mp4,FAKE,0.7154646515846252,./videos_to_predict\WhatsApp Video 2025-05-02 at 14.05.45_49b3d8d6.mp4
+yuva.mp4,REAL,0.22438526153564453,./videos_to_predict\yuva.mp4
