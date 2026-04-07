@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DeepFake Detector</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <main class="container">
+    <header class="hero">
+      <p class="kicker">AI Video Verification</p>
+      <h1>DeepFake Detection Dashboard</h1>
+      <p class="subtitle">
+        Upload videos, run predictions from your model pipeline, and review confidence scores in one place.
+      </p>
+    </header>
+
+    <section class="panel upload-panel">
+      <h2>Upload Videos</h2>
+      <form id="predictForm">
+        <label for="videoFile">Choose video file</label>
+        <input id="videoFile" name="video" type="file" accept="video/*" required />
+
+        <button id="runButton" type="submit">Run Prediction</button>
+      </form>
+      <p id="statusText" class="status-text" aria-live="polite"></p>
+      <p class="hint">Tip: Place files in videos_to_predict for notebook-based batch predictions.</p>
+    </section>
+
+    <section class="panel results-panel">
+      <div class="panel-head">
+        <h2>Latest Results</h2>
+        <span id="modeBadge" class="badge">Live API</span>
+      </div>
+
+      <div id="resultsGrid" class="results-grid">
+        <article class="result-card">
+          <h3>No predictions yet</h3>
+          <p class="status">Upload a video and click Run Prediction.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

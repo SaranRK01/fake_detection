@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;600&display=swap");
+
+:root {
+  --bg: #f6f8f5;
+  --surface: #ffffff;
+  --text: #1e2622;
+  --muted: #5e6b64;
+  --accent: #0f766e;
+  --accent-strong: #115e59;
+  --warn: #b42318;
+  --ok: #136f63;
+  --border: #d9e1dc;
+  --shadow: 0 20px 60px rgba(18, 39, 30, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 20% 10%, rgba(15, 118, 110, 0.12) 0%, transparent 35%),
+    radial-gradient(circle at 80% 20%, rgba(234, 88, 12, 0.1) 0%, transparent 30%),
+    var(--bg);
+  min-height: 100vh;
+  padding: 32px 16px;
+}
+
+.container {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.bg-shape {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(50px);
+  opacity: 0.35;
+  z-index: 0;
+  animation: drift 12s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 240px;
+  height: 240px;
+  background: #14b8a6;
+  top: -80px;
+  left: -80px;
+}
+
+.shape-2 {
+  width: 260px;
+  height: 260px;
+  background: #fb923c;
+  bottom: -90px;
+  right: -90px;
+  animation-delay: 1.8s;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 24px;
+  animation: rise 0.7s ease-out;
+}
+
+.kicker {
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  font-size: 0.74rem;
+  color: var(--accent-strong);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+  margin: 0;
+}
+
+h1 {
+  margin-top: 10px;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+}
+
+.subtitle {
+  margin: 10px auto 0;
+  max-width: 760px;
+  color: var(--muted);
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 22px;
+  margin-bottom: 18px;
+  animation: rise 0.7s ease-out;
+}
+
+.upload-panel form {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+input {
+  border: 1px solid #c8d4cc;
+  border-radius: 12px;
+  padding: 11px 12px;
+  font-size: 0.98rem;
+  background: #fcfffd;
+}
+
+input:focus {
+  outline: 2px solid rgba(15, 118, 110, 0.25);
+  border-color: var(--accent);
+}
+
+button {
+  margin-top: 8px;
+  border: 0;
+  border-radius: 12px;
+  padding: 11px 16px;
+  background: linear-gradient(90deg, var(--accent), #0d9488);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin-bottom: 0;
+}
+
+.status-text {
+  min-height: 1.2rem;
+  margin: 10px 0 6px;
+  font-size: 0.92rem;
+  color: var(--accent-strong);
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.badge {
+  background: #e8f7f4;
+  color: var(--accent-strong);
+  border: 1px solid #bfe7e1;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.result-card {
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--muted);
+  border-radius: 14px;
+  padding: 14px;
+  background: #fff;
+}
+
+.result-card h3 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.result-card p {
+  margin: 0;
+  color: #2f3a35;
+}
+
+.status {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.result-card.fake {
+  border-left-color: var(--warn);
+  background: #fff8f7;
+}
+
+.result-card.real {
+  border-left-color: var(--ok);
+  background: #f6fffc;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@media (max-width: 760px) {
+  .panel {
+    padding: 16px;
+  }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+}
